@@ -13,6 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPmobile.UWP", "WPmobile\WP
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		WPmobile\WPmobile\WPmobile.projitems*{5b42d59d-c4aa-4058-8032-1b628b0a981d}*SharedItemsImports = 4
 		WPmobile\WPmobile\WPmobile.projitems*{9e9d328f-43b0-48c2-823c-5613a3e881b6}*SharedItemsImports = 4
 		WPmobile\WPmobile\WPmobile.projitems*{cf4a5af8-ec95-4f7e-9945-af76c9f3da21}*SharedItemsImports = 13
 		WPmobile\WPmobile\WPmobile.projitems*{fd78f443-cee3-41f7-bc15-66b87a10e654}*SharedItemsImports = 4

@@ -8,6 +8,6 @@ namespace WPmobile.Service
 {
     public interface IRestService
     {
-        Task<Employee> GetEmployeeInfoAsync(string emplID);
+        Task<List<Employee>> GetAllEmployeesAsync();
     }
 }

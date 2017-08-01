@@ -15,9 +15,9 @@ namespace WPmobile.Service
             restService = service;
         }
 
-        public Task<Employee> GetEmployeeInfoAsync(string emplID)
+        public Task<List<Employee>> GetAllEmployeesAsync()
         {
-            return restService.GetEmployeeInfoAsync(emplID);
+            return restService.GetAllEmployeesAsync();
         }
     }
 }

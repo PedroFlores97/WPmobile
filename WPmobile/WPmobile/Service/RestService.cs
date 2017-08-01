@@ -1,11 +1,10 @@
-﻿using WPmobile.Models;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using WPmobile.Models;
 
 namespace WPmobile.Service
 {
@@ -21,36 +20,37 @@ namespace WPmobile.Service
             client = new HttpClient();
 
             client.BaseAddress = new Uri("https://wpapi.guttman.cuny.edu");
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authHeaderValue);
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", authHeaderValue);
+            
 
             //var t = client.GetAsync("/api/employee/15036246").Result;
 
         }
 
-        public async Task<Employee> GetEmployeeInfoAsync(string emplID)
+        public async Task<Employee> GetAllEmployeesAsync(string emplID)
         {
-            Employee empl = new Employee();
+            List<Employee> emplList = new List<Employee>();
 
-            //string Url = "https://wpapi.guttman.cuny.edu/api/employee";
+            //string Url = "https://wpapi.guttman.cuny.edu";
             //var uri = new Uri(string.Format(Url, string.Empty));
 
             try
             {
-                var response = client.GetAsync("/api/employee/getemployee/" + emplID).Result;
+                var response = client.GetAsync("/api/employee/getallemployees/").Result;
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
-                    empl = JsonConvert.DeserializeObject<Employee>(content);
+                    emplList = JsonConvert.DeserializeObject<EmployeeList>(content).Employees;
                 }
             }
             catch (Exception ex)
             {
-                throw ex;
+
             }
 
-            return empl;
+            return emplList;
         }
 
+        
     }
 }

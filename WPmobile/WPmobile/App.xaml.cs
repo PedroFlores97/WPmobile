@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using WPmobile.Views;
 using Xamarin.Forms;
 
 namespace WPmobile
@@ -13,8 +13,8 @@ namespace WPmobile
 		{
 			InitializeComponent();
 
-			MainPage = new WPmobile.MainPage();
-		}
+            MainPage = new NavigationPage(new LoginPage());
+        }
 
 		protected override void OnStart ()
 		{

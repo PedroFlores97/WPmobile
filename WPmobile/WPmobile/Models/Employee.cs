@@ -18,4 +18,8 @@ namespace WPmobile.Models
         public string Bio { get; set; }
         public byte[] Picture { get; set; }
     }
+    public class EmployeeList
+    {
+        public List<Employee> Employees { get; set; }
+    }
 }

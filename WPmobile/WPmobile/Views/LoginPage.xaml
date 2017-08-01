@@ -4,13 +4,13 @@
              x:Class="WPmobile.Views.LoginPage">
     <StackLayout  VerticalOptions="Start">
 
-        <Image Source="guttmanh.jpg"/>
+        <Image Source="guttmanhnew.jpg"/>
 
 
         <StackLayout Padding="50" VerticalOptions="Center">
 
             <Label TextColor="Black" FontSize="36" Text="White Page" VerticalOptions="Center"/>
-            <Entry x:Name="usernameEnC:\Users\Tamassul Malaque\documents\visual studio 2017\Projects\App6\App6\App6\MainPage.xaml.cstry" Placeholder =" Username" />
+            <Entry x:Name="usernameEntry" Placeholder =" Username" />
             <Entry x:Name="passwordEntry"  IsPassword =" true" Placeholder="Password" />
             <Button Text="Log In"  BackgroundColor="Orange" Clicked="onNextPageButtonClicked"/>
 

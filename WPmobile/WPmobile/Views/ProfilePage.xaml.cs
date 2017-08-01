@@ -41,5 +41,17 @@ namespace WPmobile.Views
                 ViewList.ItemsSource = ListEmployees;
             }
         }
+
+        async void MainListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            //if (e.SelectedItem == null)
+            // return;
+            Employee emp = (Employee)((ListView)sender).SelectedItem;
+            await DisplayAlert("Item Tapped", emp.EmplID, "OK");
+
+
+            // Deselect Item
+            ((ListView)sender).SelectedItem = null;
+        }
     }
 }
